@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+	<title>Aplicaciones Web Cliente | ISTEA</title>
+  <meta name="description" content="Bienvenidos a Aplicaciones Web Cliente en ISTEA.">
+	<link rel="stylesheet" href="css/estilos.css">
+  <script src="js/menu.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">AWC</a></h1>
+    <nav id="primary-navigation" data-visible="false" class="primary-navigation">
+      <ul>
+        <li><a href="clase1.html">Clase 1</a></li>
+      </ul>
+    </nav>
+    <button class="menu-boton" aria-label="Ingresar al menu principal" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu principal</span></button>
+  </header>
+  <main class="contenido">
+    <section>
+      <h1>Aplicaciones Web Cliente</h1>
+    </section>
+    <section>
+      <h1>¿Qué son las APW?</h1>
+      <h2>Introducción</h2>
+      <p>Las aplicaciones web cliente son aquellas que se ejecutan principalmente en el navegador del usuario mediante tecnologías como <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>. A diferencia de las <strong>aplicaciones del lado del servidor</strong>, donde el procesamiento ocurre en un servidor remoto, las aplicaciones cliente procesan la lógica, manipulan el <strong>DOM</strong> y gestionan la <strong>UI</strong> directamente en el dispositivo del usuario. Esto permite una experiencia más interactiva y rápida, ya que muchas operaciones no requieren recargar la página completa.</p>
+      <p>El núcleo de estas aplicaciones radica en <strong>JavaScript</strong>, el lenguaje que aporta dinamismo al contenido estático proporcionado por HTML (estructura) y CSS (estilo). Con la evolución de estándares como <strong>ECMAScript</strong>, frameworks como <strong>React</strong>, <strong>Vue</strong> o <strong>Angular</strong>, y herramientas como WebAssembly, las aplicaciones web cliente han alcanzado un nivel de complejidad y rendimiento comparable al de aplicaciones nativas, dando lugar a las conocidas <strong>Single Page Applications (SPA)</strong>.</p>
+      <h2>DOM</h2>
+      <p>El DOM, o <strong>Document Object Model</strong> (Modelo de Objetos del Documento), es una representación estructurada en forma de árbol de un documento <strong>HTML</strong> que permite a los lenguajes de programación, principalmente <strong>JavaScript</strong>, interactuar con el contenido, la estructura y el estilo de una página web. El <strong>navegador web</strong> genera este modelo a partir del código <strong>HTML</strong>, convirtiendo cada etiqueta, atributo y texto en un "nodo" que forma parte de una jerarquía: el documento completo es el nodo raíz, los elementos como <span>html</span>, <span>head</span> y <span>body</span> son nodos hijos, y así sucesivamente.Esta estructura permite acceder y manipular dinámicamente los elementos de la página. Por ejemplo, con JavaScript puedes seleccionar un <strong>nodo</strong> (usando métodos como <span>document.getElementById()</span> o <span>querySelector())</span>, modificar su contenido, agregar o eliminar elementos, cambiar atributos o estilos, e incluso responder a eventos del usuario como clics o entradas de teclado.</p>
+      <h2>¿Cómo funciona el DOM?</h2>
+      <p>HTML es el lenguaje que define el contenido inicial de la página: las etiquetas como <span>div</span>, <span>p</span> o <span>img</span> forman el markup estático. Cuando el <strong>navegador</strong> carga y analiza (parsea) ese HTML, <strong>construye automáticamente el DOM</strong>, convirtiendo cada etiqueta, atributo y texto en un nodo dentro de una estructura de árbol. En este punto, los nodos ya existen como objetos en memoria del navegador, independientemente de JavaScript.</p>
+      <ul>
+        <li><strong>HTML</strong> proporciona el contenido inicial.</li>
+        <li>El <strong>navegador</strong> crea los nodos del DOM a partir de ese HTML.</li>
+        <li><strong>JavaScript</strong> permite manipular esos nodos.</li>
+      </ul>
+      <a href="https://www.w3schools.com/XML/dom_nodetype.asp" class="btn-fill" target="_blank" rel="noopener noreferrer">Diferentes tipos de nodos</a>
+    </section>
+    <section>
+      <h1>HTML</h1>
+      <h2>¿Cuál es el papel de HTML en AWC?</h2>
+      <p>En el contexto de las aplicaciones web cliente y el DOM, HTML (HyperText Markup Language) es el lenguaje de marcado estándar que define la estructura y el contenido inicial de una página web. Se compone de una serie de etiquetas (como <span>html</span>, <span>head</span>, <span>body</span>, <span>div</span>, <span>p</span>, <span>img</span>, etc.) que describen jerárquicamente los elementos de la página, incluyendo textos, imágenes, enlaces, formularios y otros componentes. Cuando el navegador carga un documento HTML, lo analiza y construye a partir de él el árbol del DOM, convirtiendo cada etiqueta en un nodo de elemento, cada atributo en propiedades asociadas y el texto en nodos de texto.</p>
+      <p><strong>HTML</strong> actúa como la <strong>base estática y semántica</strong> sobre la que construímos la representación dinámica que <strong>JavaScript</strong> puede manipular posteriormente para crear interfaces interactivas.</p>
+    </section>
+    <section>
+      <h1>CSS</h1>
+      <p>En el contexto de las aplicaciones web cliente y el DOM, <strong>CSS</strong> (Cascading Style Sheets, o Hojas de Estilo en Cascada) es el lenguaje responsable de definir la presentación visual y el diseño de los elementos representados en el DOM a partir del HTML.</p>
+      <p>Mediante reglas compuestas por selectores (que identifican nodos del DOM, como etiquetas, clases o IDs) y declaraciones de propiedades (como color, tamaño, posición, márgenes, fuentes o animaciones), <strong>CSS controla cómo se renderizan los elementos en la pantalla</strong>, separando completamente el estilo de la estructura y el contenido.</p>
+    </section>
+    <section>
+      <h1>Javascript</h1>
+      <p>JavaScript es el lenguaje de programación que aporta dinamismo e interactividad a las páginas web, permitiendo ejecutar código directamente en el navegador del usuario. Actúa como el <strong>motor que manipula el DOM</strong> generado a partir del <strong>HTML</strong>, modificando nodos, agregando o eliminando elementos, cambiando estilos definidos por CSS, <strong>respondiendo a eventos del usuario</strong> (como clics, movimientos del ratón o entradas en formularios) y realizando operaciones lógicas o cálculos en tiempo real.</p>
+      <p>Gracias a JavaScript, una página inicialmente estática se transforma en una aplicación rica y responsiva, capaz de actualizar contenido sin recargar la página completa, comunicarse con servidores mediante peticiones <strong>AJAX</strong> o <strong>Fetch</strong>, y ejecutar lógica compleja, convirtiéndose en el pilar fundamental del desarrollo front-end moderno junto con HTML y CSS.</p>
+    </section>
+    <section>
+      <h1>El elefante en la habitación</h1>
+      <p>Las aplicaciones web cliente impulsadas por JavaScript es el hecho de que <strong>todo el procesamiento y la lógica se ejecutan exclusivamente en el navegador del usuario</strong>, lo que implica limitaciones inherentes que a menudo se pasan por alto en medio del entusiasmo por las experiencias interactivas y fluidas. Aunque JavaScript permite crear interfaces ricas y responsivas sin recargas constantes, su ejecución del lado del cliente significa que el código fuente es <strong>completamente visible y accesible para cualquier usuario a través de las herramientas de desarrollo del navegador.</strong></p>
+      <p>Esto expone vulnerabilidades de seguridad críticas: nunca se deben realizar validaciones sensibles, autenticaciones reales o manipulaciones de datos confidenciales solo en el cliente, ya que un atacante puede inspeccionar, modificar o hacer un bypass fácilmente el código, <strong>abriendo la puerta a riesgos como inyecciones XSS o exposición de lógica de negocio.</strong></p>
+      <p>Además, esta dependencia del cliente introduce problemas de rendimiento y compatibilidad: el procesamiento depende de la potencia del dispositivo del usuario (que puede ser limitada en móviles o equipos antiguos), la conexión a internet para cargar scripts iniciales, y las diferencias entre navegadores, lo que puede generar experiencias inconsistentes o lentas.</p>
+      <p>Aunque frameworks modernos y optimizaciones han mitigado parte de esto, una aplicación puramente client-side no puede manejar operaciones seguras o intensivas sin recurrir inevitablemente a un backend servidor, recordándonos que <strong>JavaScript brilla en la interactividad visible</strong>, pero siempre necesita un complemento server-side para ser robusta y segura en entornos reales. Ignorar este "elefante" lleva a aplicaciones vulnerables o subóptimas, cuando el equilibrio híbrido (con lógica crítica en el servidor) es la práctica recomendada.</p>
+    </section>
+    <section>
+      <h1>Pero, aún así, JavaScript domina el Front-end</h1>
+      <p>Una de las mayores ventajas de JavaScript y las aplicaciones web cliente es la <strong>experiencia de usuario fluida y altamente interactiva que ofrecen sin necesidad de recargas constantes de página</strong>. Gracias a la manipulación directa del DOM y al manejo de eventos en tiempo real, las interfaces pueden actualizarse de forma instantánea: un formulario valida datos al instante, un menú se expande con animaciones suaves o un feed de contenido carga más elementos según el usuario desplaza la página.</p>
+      <p>Esta reactividad, potenciada por frameworks modernos como <strong>React</strong>, <strong>Vue</strong> o <strong>Svelte</strong>, hace que las aplicaciones web se sientan tan rápidas y naturales como las aplicaciones nativas, mejorando significativamente la retención y satisfacción del usuario en comparación con las páginas tradicionales server-rendered.</p>
+      <p>Otra ventaja clave es la reducción de la carga en el servidor y el aprovechamiento óptimo de los recursos del cliente. Al delegar gran parte del procesamiento (renderizado, cálculos ligeros, animaciones) al navegador del usuario, el servidor solo necesita proporcionar datos (generalmente en formato <strong>JSON</strong> a través de <strong>APIs REST</strong> o <strong>GraphQL</strong>) en lugar de generar HTML completo en cada petición. Esto permite escalar aplicaciones a millones de usuarios con menos infraestructura servidor, disminuye la latencia percibida (una vez cargada la aplicación inicial, las interacciones son inmediatas) y facilita el desarrollo de aplicaciones offline o con funcionalidades <strong>PWA (Progressive Web Apps)</strong> que funcionan incluso sin conexión, almacenando datos localmente con tecnologías como <strong>IndexedDB</strong> o <strong>Cache API.</strong></p>
+      <p>Finalmente, el enfoque client-side fomenta un desarrollo más ágil, modular y con separación clara de responsabilidades. Los equipos front-end pueden trabajar de forma independiente del backend, <strong>consumiendo APIs</strong> bien definidas, lo que acelera los ciclos de desarrollo y facilita la reutilización de componentes.</p>
+      <p>Además, la amplia disponibilidad de herramientas, bibliotecas y ecosistema (npm, bundlers como Vite o Webpack, testing con Jest o Cypress) hace que crear aplicaciones complejas sea más accesible y mantenible. En un mundo donde los dispositivos de los usuarios son cada vez más potentes y las conexiones más rápidas, las ventajas de la ejecución en el cliente superan con creces muchas de sus limitaciones históricas, consolidando a <strong>JavaScript</strong> como la tecnología dominante para construir experiencias web modernas y atractivas.</p>
+    </section>
+    <section>
+      <h1>Client-side / Server-side</h1>
+      <h2>El diálogo entre las aplicaciones web del lado del cliente y las aplicaciones del lado del servidor</h2>
+      <p>Para los entusiastas del back-end, la conexión entre las aplicaciones web del lado del cliente (basadas en JavaScript, HTML y CSS) y el server-side se realiza principalmente a través de <strong>APIs</strong> que permiten el intercambio de datos de forma segura y eficiente. La tecnología más clásica y ampliamente utilizada es <strong>RESTful APIs sobre HTTP/HTTPS</strong>, donde el cliente realiza peticiones con métodos como <span>GET</span>, <span>POST</span>, <span>PUT</span> o <span>DELETE</span> (usando herramientas nativas como <span>fetch()</span> o bibliotecas como <strong>Axios</strong>), y el servidor responde con datos en formato <strong>JSON</strong>. Esta aproximación es simple, stateless y escalable, ideal para operaciones <span>CRUD</span>, y se implementa en prácticamente cualquier tecnología back-end, desde <strong>Node.js (con Express)</strong> hasta <strong>Python (Django/Flask)</strong>, <strong>PHP (Laravel)</strong> o <strong>Java (Spring Boot)</strong>.</p>
+      <p>Otra opción poderosa es <strong>GraphQL</strong>, que permite al cliente solicitar exactamente los datos en una sola consulta. Es especialmente apreciada por desarrolladores back-end por su tipado fuerte (con esquemas), facilidad para versionado y herramientas como <strong>Apollo Server</strong> o <strong>Hasura</strong>, integrándose bien con bases de datos y microservicios. Para escenarios en tiempo real (chats, notificaciones, dashboards live), <strong>WebSockets</strong> ofrecen una conexión bidireccional persistente, permitiendo que el servidor "empuje" datos al cliente sin polling constante; bibliotecas como <strong>Socket.io</strong> (en <span>Node.js</span>) o <strong>SignalR</strong> (en <span>.NET</span>) facilitan su implementación.</p>
+      <p>Finalmente, otras tecnologías emergentes incluyen <strong>gRPC</strong> para comunicación de alto rendimiento (usando Protocol Buffers, ideal en microservicios internos) y enfoques híbridos como <strong>Server-Sent Events (SSE)</strong> o webhooks para actualizaciones event-driven.</p>
+      <p>Algunas de las combinaciones más frecuentes:</p>
+      <ul>
+        <li>Node.js/Express/NestJS (por su ecosistema JavaScript full-stack)</li>
+        <li>Python con Django/FastAPI</li>
+        <li>.NET Core, Go y Ruby on Rails, permitiendo a los desarrolladores server-side enfocarse en lógica segura, autenticación (JWT/OAuth)</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <div class="contenedor-footer">
+      <span>Aplicaciones Web Cliente | ISTEA | 2026</span>
+    </div>
+  </footer>
+</body>
+</html>

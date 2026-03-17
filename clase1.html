@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+	<title>Aplicaciones Web Cliente | ISTEA | Clase 1</title>
+  <meta name="description" content="Primera clase de Aplicaciones Web Cliente en ISTEA.">
+	<link rel="stylesheet" href="css/estilos.css">
+  <script src="js/menu.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">AWC</a></h1>
+    <button class="menu-boton" aria-label="Ingresar al menu principal" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu principal</span></button>
+    <nav id="primary-navigation" data-visible="false" class="primary-navigation">    
+      <ul>
+        <li><a href="clase1.html">Clase 1</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="contenido">
+    <section>
+      <h1>AWC | Clase 1: HTML</h1>
+    </section>
+    <section>
+      <h1>HTML</h1>
+      <h2>¿Cuál es el papel de HTML en AWC?</h2>
+      <p>En el contexto de las aplicaciones web cliente y el DOM, HTML (HyperText Markup Language) es el lenguaje de marcado estándar que define la estructura y el contenido inicial de una página web. Se compone de una serie de etiquetas (como <span>html</span>, <span>head</span>, <span>body</span>, <span>div</span>, <span>p</span>, <span>img</span>, etc.) que describen jerárquicamente los elementos de la página, incluyendo textos, imágenes, enlaces, formularios y otros componentes. Cuando el navegador carga un documento HTML, lo analiza y construye a partir de él el árbol del DOM, convirtiendo cada etiqueta en un nodo de elemento, cada atributo en propiedades asociadas y el texto en nodos de texto.</p>
+      <p><strong>HTML</strong> actúa como la <strong>base estática y semántica</strong> sobre la que construímos la representación dinámica que <strong>JavaScript</strong> puede manipular posteriormente para crear interfaces interactivas.</p>
+      <h2>Manuales de referencia de la W3C</h2>
+      <ul>
+        <li><a href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">Manual de HTML</a></li>
+        <li><a href="https://www.w3schools.com/Css/" target="_blank" rel="noopener noreferrer">Manual de CSS</a></li>
+        <li><a href="https://www.w3schools.com/js/DEFAULT.asp" target="_blank" rel="noopener noreferrer">Manual de JS</a></li>
+      </ul>
+    </section>
+    <section>
+      <h1>Creación del proyecto y configuraciónes generales</h1>
+      <p>Para trabajar utilizaremos <span>vscode</span>, pueden descargarlo directamente aquí <strong><a href="" target="_blank" rel="noopener noreferrer">Visual Studio Code</strong></a></p>
+      <img src="img/vscode/vscode00.png" alt="Visual Studio Code website">
+      <p>El proyecto para la materia debe estar dentro de una carpeta o directorio principal, que abriremos luego con <span>vscode</span></p>
+      <img src="img/vscode/vscode01.png" alt="Ventana principal de Visual Studio Code">
+    </section>
+    <section>
+      <h1>Ejercicio 1</h1>
+      <p>Deben crear una <span>carpeta</span> (directorio) en su <span>sistema local</span> (Windows, Mac, Linux) que contendrá la estructura básica para nuestro proyecto.</p>
+      <ul>
+        <li>Carpeta con nombre sin espacios, ni caracteres especiales</li>
+        <li>Dentro un archivo <span>index.html</span></li>
+        <li>También una carpeta <span>/css</span></li>
+        <li>Otra para nuestras imágenes <span>/img</span></li>
+        <li>Una para guardar nuestros archivos javascript <span>/js</span></li>
+        <li><span>index.html</span> debe tener, como mínimo, un <span>body</span>, <span>header</span>, <span>main</span> y <span>footer</span></li>
+      </ul>
+      <p>Configuraciones adicionales</p>
+      <ul>
+        <li>Instalar la extensión <span>LiveServer</span> en <span>vscode</span></li>
+        <li>Para el ajuste de línea automático, configurar el <span>word wrap</span> dentro del menú de configuración de <span>vscode</span></li>
+      </ul>
+      <img src="img/vscode/vscode02.png" alt="Ajuste de word wrap en vscode">
+      <img src="img/vscode/vscode03.png" alt="Instalación de LiveServer">
+    </section>
+    <section>
+      <h1>Semántica</h1>
+      <h2>La importancia del uso de la semántica en HTML</h2>
+    </section>
+    <section>
+      <h1>Ejercicio 2: Catálogo</h1>
+      <p>Deben elegir una temática para armar un catálogo. El catálogo de cada uno de uds. tendrá un nombre descriptivo y una introducción.</p>
+      <p>En el <span>index.html</span> deben crear 2 secciones, la primera es una bienvenida al catálogo y la segunda, una breve descripción introductoria.</p>
+      <p>Por ejemplo, si el catálogo es sobre <span>cine</span> tienen que describir la temática brevemente.</p>
+      <p>Deben también confeccionar un archivo <span>README.md</span> en el directorio raíz de su proyecto, el cual servirá para documentar su trabajo. Debe tener un título con el nombre y apellido de uds. el nombre de la materia y el número de comisión.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="contenedor-footer">
+      <span>AWC | ISTEA | 2026</span>
+      <span>Manuel Fernández</span>
+    </div>
+  </footer>
+</body>
+</html>
