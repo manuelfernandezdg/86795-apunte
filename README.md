@@ -1,5 +1,5 @@
-## Materia Aplicaciones Web Cliente
-## ISTEA 2026
+# Aplicaciones Web Cliente
+**1er cuatrimestre, ISTEA 2026**<br><br>
 
 ## Manuales de consulta
 - [W3C HTML Manual](https://www.w3schools.com/html/) – Manual oficial de **HTML**
@@ -11,16 +11,13 @@
 - [W3C HTML Living Standard](https://html.spec.whatwg.org/) – Especificación oficial de HTML
 - [MDN Web Docs – HTML](https://developer.mozilla.org/es/docs/Web/HTML) – Documentación práctica recomendada<br><br>
 
-
 ## Tipografía
 - [Google Fonts](https://fonts.google.com/) – Para tipografías personalizadas
 - [Google Fonts – Inter](https://fonts.google.com/specimen/Inter) – **Fuente principal del proyecto**<br><br>
 
-
 ## Recursos avanzados
 - [CSS-Tricks](https://css-tricks.com/) – Artículos y guías avanzadas de **CSS**
 - [Can I Use...](https://caniuse.com/) – **Soporte** de navegadores para features modernas<br><br>
-
 
 ## Favicon
 - [Favicon generator](https://favicon.io/) – Herramienta para la creación del **favicon**<br><br>
