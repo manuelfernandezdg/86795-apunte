@@ -13,7 +13,7 @@
 
 ## Tipografía
 - [Google Fonts](https://fonts.google.com/) – Para tipografías personalizadas
-- [Google Fonts – Inter](https://fonts.google.com/specimen/Inter) – **Fuente principal del proyecto**<br><br>
+<br><br>
 
 ## Recursos avanzados
 - [CSS-Tricks](https://css-tricks.com/) – Artículos y guías avanzadas de **CSS**
