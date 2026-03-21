@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+	<title>Aplicaciones Web Cliente | ISTEA | Clase 2</title>
+  <meta name="description" content="Segunda clase de Aplicaciones Web Cliente en ISTEA.">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/menu.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">AWC</a></h1>
+    <nav id="primary-navigation" data-visible="false" class="primary-navigation">
+      <ul>
+        <li><a href="clase1.html">Clase 1</a></li>
+        <li><a href="clase2.html">Clase 2</a></li>
+        <li><a href="clase3.html">Clase 3</a></li>
+        <li><a href="clase4.html">Clase 4</a></li>
+        <li><a href="clase5.html">Clase 5</a></li>
+        <li><a href="clase6.html">Clase 6</a></li>
+        <li><a href="clase7.html">Clase 7</a></li>
+      </ul>
+    </nav>
+    <button class="menu-boton" aria-label="Ingresar al menu principal" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu principal</span></button>
+  </header>
+  <main class="contenido">
+    <section>
+      <h1>AWC | Clase 2: CSS</h1>
+    </section>
+    <section>
+      <h1>CSS</h1>
+      <p>En el contexto de las aplicaciones web cliente y el DOM, <strong>CSS</strong> (Cascading Style Sheets, o Hojas de Estilo en Cascada) es el lenguaje responsable de definir la presentación visual y el diseño de los elementos representados en el DOM a partir del HTML.</p>
+      <p>Mediante reglas compuestas por selectores (que identifican nodos del DOM, como etiquetas, clases o IDs) y declaraciones de propiedades (como color, tamaño, posición, márgenes, fuentes o animaciones), <strong>CSS controla cómo se renderizan los elementos en la pantalla</strong>, separando completamente el estilo de la estructura y el contenido.</p>
+    </section>
+    <section id="c2-ejercicio-1">
+      <h1>Selectores</h1>
+      <h2>¿Qué son los selectores en CSS?</h2>
+      <p>Los selectores en CSS son patrones que permiten identificar y seleccionar uno o más elementos del HTML (nodos del DOM) para aplicarles estilos específicos. Los selectores le indican al navegador qué partes de la página deben recibir las <strong>reglas declaradas en las hojas de estilo</strong>.</p>
+      <ul>
+        <li>De etiqueta: <span>p</span>, <span>div</span></li>
+        <li>De clase: <span>.mi-clase</span></li>
+        <li>De ID (identificador único): <span>#mi-id</span></li>
+        <li>Atributos o estado: <span>:focus</span>, <span>:hover</span></li>
+        <li>Relaciones jerárquicas: hijos, descendientes o hermanos</li>
+      </ul>
+    </section>
+    <section>
+      <h1>Ejercicio 1: Semántica y CSS</h1>
+      <p>Deben crear una sección que mostrará los artículos de su catálogo.</p>
+      <ul>
+        <li>Uso de la etiqueta <span>section</span></li>
+        <li>Pueden identificarla con el uso del atributo <span>id</span></li>
+        <li>Cada elemento del catálogo debe estar dentro de una etiqueta <span>article</span></li>
+        <li>Pueden colocarle datos sobre:
+          <ul>
+            <li>Título / Nombre</li>
+            <li>Precio</li>
+            <li>Categoria</li>
+            <li>Cantidad seleccionada</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section id="c2-ejercicio-2">
+      <h1>Tipografía</h1>
+      <h2>Estilos para la tipografía</h2>
+      <span class="font-family">Font family</span>
+      <span class="font-size">Font size</span>
+      <span class="font-weight">Font weight</span>
+      <p class="line-height">La unidad <span>rem</span> (root em) en CSS es extremadamente útil porque sus valores se calculan siempre respecto al tamaño de fuente del elemento raíz <span>html</span> (generalmente 16px por defecto en los navegadores), lo que permite crear sistemas de escalado consistentes y predecibles en toda la página, independientemente del anidamiento o de los tamaños de fuente heredados de elementos padres. Esto facilita el mantenimiento del código, mejora la accesibilidad (ya que respeta las preferencias de tamaño de texto del usuario) y habilita diseños responsivos más controlados.</p>
+      <p>En relación con la <strong>regla de 8</strong> (o sistema de spacing basado en múltiplos de 8px), la unidad <span>rem</span> se alinea perfectamente con este enfoque cuando se mantiene el tamaño de fuente raíz predeterminado de 16px, ya que 1rem equivale exactamente a 16px. De esta forma, valores simples como 0.5rem (8px), 1rem (16px), 1.5rem (24px), 2rem (32px) o 2.5rem (40px) <strong>permiten aplicar espaciados, márgenes y paddings de manera coherente y múltiplos de 8px sin cálculos complicados</strong>, facilitando un diseño vertical rítmico y mantenible mientras se respeta la accesibilidad y las preferencias del usuario en el navegador.</p>
+    </section>
+    <section id="imagenes">
+      <h1>Imágenes</h1>
+      <p>El elemento <span>img</span> en HTML es una etiqueta vacía (sin cierre) que se utiliza para incrustar imágenes en una página web, definiendo su ubicación y propiedades visuales mediante atributos.</p>
+      <p>El atributo <span>src</span> (source) es obligatorio y especifica la ruta o URL del archivo de imagen (relativa o absoluta), indicando al navegador dónde cargar el recurso; si la ruta es incorrecta o el archivo no existe, la imagen no se mostrará y aparecerá un icono de error.</p>
+      <p>Por otro lado, el atributo <span>alt</span> (texto alternativo) es crucial por accesibilidad y robustez: proporciona una descripción textual de la imagen que se lee en lectores de pantalla para usuarios con discapacidad visual, se muestra cuando la imagen no puede cargarse (por ejemplo, por conexión lenta o src roto) y mejora el <strong>SEO</strong> al ayudar a los motores de búsqueda a entender el contenido. Un buen <span>alt</span> debe ser <strong>descriptivo pero conciso, reflejando el propósito de la imagen en el contexto de la página.</strong></p>
+      <img src="img/001.jpg" alt="Portada de The Shadow #4, Alex Ross">
+      <h2>Propiedades CSS utilizadas en el ejemplo:</h2>
+      <ul>
+        <li><a href="https://www.w3schools.com/cssref/css3_pr_border-radius.php" target="_blank" rel="noopener noreferrer">border-radius</a></li>
+        <li><a href="https://www.w3schools.com/css/css_border.asp" target="_blank" rel="noopener noreferrer">border</a></li>
+        <li><a href="https://www.w3schools.com/cssref/css3_pr_box-shadow.php" target="_blank" rel="noopener noreferrer">box-shadow</a></li>
+        <li><a href="https://www.w3schools.com/css/css3_image_filters.asp"  target="_blank" rel="noopener noreferrer">filter</a></li>
+      </ul>
+    </section>
+    <section>
+      <h1>Ejercicio 2: Agregar imágenes</h1>
+      <p>A los elementos anteriores agregados al <span>article</span> deben agregar la imagen ilustrativa correspondiente.</p>
+    </section>
+    <section>
+      <h1>Modelo de Caja</h1>
+      <p>En <strong>CSS</strong> llamamos "caja" a las propiedades que controlan los elementos que envuelven a cada uno de los nodos del DOM. Consiste en:</p>
+      <ul>
+        <li>Contenido</li>
+        <li>Padding (margen interno)</li>
+        <li>Border (borde externo)</li>
+        <li>Margin (margen externo)</li>
+      </ul>
+
+      <h2>Tipos de elementos</h2>
+      <h3>Block | Bloque</h3>
+      <ul>
+        <li>Tienden a ocupar el ancho disponible de su contenedor.</li>
+        <li>Agregan saltos de línea antes y después de su posición.</li>
+        <li>Pueden contener elementos de línea y bloque.</li>
+        <li>Admiten parámetros de alto y ancho</li>
+      </ul>
+
+      <code><span>&lt;body&gt;</span>, <span>&lt;header&gt;</span>, <span>&lt;nav&gt;</span>, <span>&lt;div&gt;</span></code>
+
+      <h3>Inline | En línea</h3>
+      <ul>
+        <li>Ocupan sólo el área de su contenido</li>
+        <li>No agregan saltos de línea.</li>
+        <li>Pueden contener solamente otros elementos de línea.</li>
+        <li>No admiten parámetros de alto y ancho.</li>
+      </ul>
+
+      <code><span>&lt;a&gt;</span>, <span>&lt;strong&gt;</span>, <span>&lt;em&gt;</span>, <span>&lt;span&gt;</span></code>
+
+      <h3>Inline-block | En línea-bloque</h3>
+      <ul>
+        <li>Ocupan sólo el área de su contenido</li>
+        <li>No agregan saltos de línea.</li>
+        <li>Pueden contener solamente otros elementos de línea.</li>
+        <li>Admiten parámetros de alto y ancho.</li>
+      </ul>
+      <code><span>&lt;img&gt;</span>, <span>&lt;input&gt;</span></code>
+    </section>
+    <section>
+      <h1>Desafío: <span>header</span></h1>
+      <p>Deben armar un <span>header</span> que tenga el 'logo' del catálogo y un <span>nav</span> con los links para poder navegar a otras secciones.</p>
+      <p>El 'logo' puede ser solamente texto, no es necesario que sea una imagen.</p>
+      <p>También pueden improvisar un <span>footer</span> inicial.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="contenedor-footer">
+      <span>AWC | ISTEA | 2026</span>
+      <span>Manuel Fernández</span>
+    </div>
+  </footer>
+</body>
+</html>
