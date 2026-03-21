@@ -274,3 +274,20 @@ footer {
   background-color: var(--bg-color-200);
   padding: 2rem 0 1rem;
 }
+
+/* Ejemplo clase 2 */
+#imagenes img {
+  border-radius: 2rem;
+  box-shadow: none;
+  border: 0.15rem solid var(--text-color);
+
+  width: 22rem;
+  filter: grayscale(100%);
+}
+
+#imagenes img:hover {
+  border: 0.15rem solid var(--accent-color-400);
+  box-shadow: 0 1rem 2rem 0.5rem var(--bg-color-200);
+  filter: grayscale(0%);
+  cursor: pointer;
+}
