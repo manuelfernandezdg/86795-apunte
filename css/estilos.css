@@ -68,6 +68,7 @@ header {
   align-content: center;
   background-color: var(--bg-color-400);
   position: sticky;
+  z-index: 998; /* Stacking */
   border-radius: 2rem;
   padding: 0 1.5rem;
   top: 1rem;
@@ -94,7 +95,7 @@ header ul {
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 999;
+  z-index: 999; /* Stacking */
   background-color: var(--bg-color-200-75);
   transform: translateX(+100%) translateY(0%);
   transition: transform 350ms ease-out;
@@ -276,6 +277,7 @@ footer {
 }
 
 /* Ejemplo clase 2 */
+
 #imagenes img {
   border-radius: 2rem;
   box-shadow: none;
