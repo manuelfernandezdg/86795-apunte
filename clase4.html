@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+	<title>Aplicaciones Web Cliente | ISTEA | Clase 4</title>
+  <meta name="description" content="Clase 4 de Aplicaciones Web Cliente en ISTEA.">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="stylesheet" href="css/estilos.css">
+  <script src="js/menu.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">AWC</a></h1>
+    <nav id="primary-navigation" data-visible="false" class="primary-navigation">
+      <ul>
+        <li><a href="clase1.html">Clase 1</a></li>
+        <li><a href="clase2.html">Clase 2</a></li>
+        <li><a href="clase3.html">Clase 3</a></li>
+        <li><a href="clase4.html">Clase 4</a></li>
+      </ul>
+    </nav>
+    <button class="menu-boton" aria-label="Ingresar al menu principal" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu principal</span></button>
+  </header>
+  <main class="contenido">
+    <section>
+      <h1>AWC | Clase 4: Flexbox y Grid</h1>
+    </section>
+    <section>
+      <h1>Flexbox</h1>
+      <p><strong>Flexbox</strong> es un método de CSS para controlar el modelo de caja de los elementos. Funciona sobre la propiedad <span>display</span> con valor <span>flex</span>.</p>
+      <p>Cuando a un contenedor principal le asignamos el valor <span>flex</span> a su  display, automáticamente los elementos que pertenecen a dicho contenedor son flexibles.</p>
+      <p>Al asignar la propiead <span>display:flex;</span> las siguientes propiedades tienen los siguientes valores:</p>
+      <ul>
+        <li><span>flex-direction: row;</span></li>
+        <li><span>justify-content: flex-start;</span></li>
+        <li><span>align-items: stretch;</span></li>
+        <li><span>gap: 0;</span></li>
+      </ul>
+      <p>La propiedad <span>flex-direction</span> controla la dirección del eje principal del contenedor. Puede ser <span>row</span> o <span>column</span>.</p>
+      <p>La propiedad <span>justify-content</span> controla la alineación de los elementos sobre el eje principal.</p>
+      <p>La propiedad <span>align-items</span> controla la alineación de los elementos sobre el eje secundario.</p>
+      <p>La propiedad <span>gap</span> nos permite agregar distancia entre los elementos dentro del contenedor.</p>
+      <a href="https://www.w3schools.com/css/css3_flexbox.asp" target="_blank" rel="noopener noreferrer">Manual de Flexbox en la W3C</a>
+    </section>
+    <section>
+      <h1>Grid</h1>
+      <p>El sistema <span>grid</span> en CSS nos permite crear grillas a través de propiedades que controlan las filas y columnas dentro de un contenedor.</p>
+      <p>Cuando queremos utilizar <span>grid</span> como método dentro de un contenedor, lo que debemos hacer es asignarle a su <span>display</span> el valor de <span>grid</span></p>
+      <p>Cuando colocamos <span>display: grid;</span>, obtenemos lo siguiente:</p>
+      <ul>
+        <li>Propiedades de la estructura:</li>
+        <li><span>grid-template-columns: auto;</span></li>
+        <li><span>grid-template-rows: auto;</span></li>
+      </ul>
+      <br>
+      <ul>
+        <li>Propiedades de las celdas</li>
+        <li><span>justify-content:normal(start);</span></li>
+        <li><span>justify-items:legacy(start);</span></li>
+        <li><span>align-content:normal(start);</span></li>
+        <li><span>align-items:normal(start);</span></li>
+      </ul>
+      <a href="https://www.w3schools.com/css/css_grid.asp" target="_blank" rel="noopener noreferrer">Manual de Grid en la W3C</a>
+    </section>
+    <section>
+      <h1>Tipografía adaptable</h1>
+      <p><span>clamp()</span> es una función de CSS que permite definir un valor que se mantiene entre un mínimo y un máximo, ajustándose automáticamente según el espacio disponible.</p>
+      <p>Su sintaxis es:<br><span>clamp(minimo, valor-preferido, maximo)</span></p>
+      <p>Por ejemplo: <br><span>font-size: clamp(1rem, 4vw, 2rem);</span></p>
+      <ul>
+        <li>Nunca será menor a 1rem</li>
+        <li>Intenta siempre ser el 4vw o 4% del ancho de la ventana</li>
+        <li>Nunca superará los 2rem</li>
+      </ul>
+      <a href="https://www.w3schools.com/cssref/func_clamp.php" target="_blank" rel="noopener noreferrer">clamp() en la W3C</a>
+    </section>
+  </main>
+  <footer>
+    <div class="contenedor-footer">
+      <span>Aplicaciones Web Cliente | ISTEA | 2026</span>
+    </div>
+  </footer>
+</body>
+</html>
