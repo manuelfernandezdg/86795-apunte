@@ -30,10 +30,90 @@
   </header>
   <main class="contenido">
     <section>
-      <h1>AWC | Clase 4: Flexbox y Grid</h1>
+      <h1>AWC | Clase 5: Adaptabilidad</h1>
     </section>
     <section>
-
+      <h1>Adaptabilidad vs Responsive</h1>
+      <h2>Diseño adaptable</h2>
+      <ul>
+        <li>La detección del dispositivo la hacemos del lado del cliente y enviamos la instrucción al servidor.</li>
+        <li>El servidor procesa el layout y devuelve la configuración al cliente de acuerdo a su dispositivo.</li>
+        <li>Los diseños son "estáticos" pero variados, el servidor devuelve una sola opción para no cargar al cliente con la tarea de construir</li>
+      </ul>
+      <h2>Diseño Responsive</h2>
+      <ul>
+        <li>El diseño es fluído y 'responsivo', responde al dispositivo directamente en el cliente.</li>
+        <li>El navegador cliente maneja los cambios directament en tiempo real.</li>
+        <li>Basado sobre cuadrículas fluídas a través del uso de métodos como <span>grid</span> y <span>flexbox</span>, así también con el uso de <span>media queries</span></li>
+      </ul>
+    </section>
+    <section>
+      <h1>Responsive y Mobile First</h1>
+      <p>En maquetación web, <span>mobile first</span> es un enfoque de diseño progresivo que tiene por principio el de priorizar la maquetación para dispositivos móviles, luego escalar progresivamente a pantallas más grandes (tablets y escritorio), añadiendo luego funcionalidades, contenido y complejidad adicionales.</p>
+      <p>Si desean conocer más en profundidad sobre esta técnica de trabajo, su autor, <strong>Luke Wroblewski</strong>, escribió un libro titulado <em>Mobile First</em> en el año 2011, donde explica que diseñar primero en un contexto más restrictivo, facilita la escalabilidad de la propuesta: nos obliga a enforcarnos en lo escencial, priorizando el contenido, rendimiento y usabilidad básica.</p>
+      <h2>Proceso</h2>
+      <ul>
+        <li>Diseñamos primero la versión móvil (generalmente el breakpoint más pequeño: ~320-480 px)</li>
+        <li>Definimos el contenido esencial, la jerarquía de la información y las interacciones básicas.</li>
+        <li>Luego aplicamos progresivamente el resto de los elementos, a medida que aumenta el tamaño de pantalla.</li>
+      </ul>
+      <h2>Ventajas</h2>
+      <ul>
+        <li>Obliga a priorizar contenido y funcionalidades esenciales.</li>
+        <li>Mejora el rendimiento en móviles.</li>
+        <li>Nos aseguramos que nuestro diseño sea responsive.</li>
+        <li>Mejor SEO, ya que Google prioriza el índice mobile-first desde el año 2018.</li>
+        <li>Experiencia mucho más consistente para el usuario móvil, el cual representa la mayoría del tráfico web desde hace años.</li>
+      </ul>
+    </section>
+    <section>
+      <h1>Media Queries</h1>
+      <p>Las regla <span>media</span> o también llamadas comunmente como <span>media queries</span> son herramientas que utilizamos en nuestro diseño de layout para establecer los <span>breakpoints</span> o <em>puntos de quiebre</em> que etablecen los tamaños de pantalla donde el diseño cambia de manera significativa.</p>
+      <h2>Breakpoints y mobile first</h2>
+      <ul>
+        <li><span>Base</span> (teléfonos): <span>320px-480px</span></li>
+        <li><span>Small</span> / sm (telefonos grandes o ventanas apaisadas): <span>576px-600px</span></li>
+        <li><span>Medium</span> / md (Tablets, vertical): <span>768px</span></li>
+        <li><span>Large</span> / lg (Tablets apaisadas, laptops pequeñas): <span>992px-1024px</span></li>
+        <li><span>Extra Large</span> / xl (Pantallas de escritorio estándar): <span>1200px - 1280px</span></li>
+        <li><span>Extra extra large</span> / 2xl (Pantallas grandes): <span> >1440px</span></li>
+      </ul>
+      <h2>Breakpoints usando la regla <span>media</span></h2>
+      <ul>
+        <li><span>Base</span></li>
+        <li><span>@media all and (min-width:768px)</span></li>
+        <li><span>@media all and (min-width:992px)</span></li>
+        <li><span>@media all and (min-width:1024px)</span></li>
+      </ul>
+    </section>
+    <section>
+      <h1>Unidades relativas</h1>
+      <p>Las unidades relativas son fundamentales en diseño <span>responsive</span> ya que nos permiten trabajar de manera consistente y fluída a lo largo de nuestro desarrollo. A diferencia de los píxeles, las unidades relativas escalan automáticamente, mejor la accesibilidad y la usabilidad, sobre todo cuando incluso agregamos el uso de reglas <span>@media</span>.</p>
+      <h2>rem y em</h2>
+      <p>Las unidades <span>rem</span> y <span>em</span> escalan siguiendo el valor del <span>font-size</span> del contenedor principal. Esto significa que en el caso del <span>rem</span> (root em), el navegador hace el cálculo sobre el valor del <span>font-size</span> del elemento <span>root</span>, en el caso de nuestra maqueta, es el elemento <span>HTML</span>.</p>
+      <p>En cambio, el <span>em</span> mira el valor del <span>font-size</span> del contenedor más inmediato al elmento.</p>
+      <p>Utilizamos las unidades <span>em</span> y <span>rem</span> para mantener la consistencia y estándar de nuestra maqueta, en conjunción con la regla de 8 puntos.</p>
+      <h2>Porcentajes</h2>
+      <p>La unidad de porcentaje sirve para que un elemento se ajuste mirando directamente al tamaño de su contenedor principal. Es preciso entender que el navegador asignará el valor final de su tamaño de acuerdo directamente al valor fijo del tamaño del contenedor principal. El porcentaje ignora los valores de padding y borde, lo cual a veces puede ser un problema, por eso es recomendable utilizar <span>box-sizing: border-box;</span> para que no ocurran discrepancias en el tamaño final de los elementos.</p>
+      <h2>Viewport</h2>
+      <p>El <span>viewport</span> es el área total de la ventana del navegador. Esta unidad contempla las barras de marco, herramientas, incluso el borde y la barra de desplazamiento para el scroll del navegador.</p>
+      <h3>Diferentes usos de la unidad <span>viewport</span></h3>
+      <ul>
+        <li><span>vw</span>, viewport width</li>
+        <li><span>vh</span>, viewport height</li>
+      </ul>
+    </section>
+    <section>
+      <h1>Tipografía adaptable</h1>
+      <p><span>clamp()</span> es una función de CSS que permite definir un valor que se mantiene entre un mínimo y un máximo, ajustándose automáticamente según el espacio disponible.</p>
+      <p>Su sintaxis es:<br><span>clamp(minimo, valor-preferido, maximo)</span></p>
+      <p>Por ejemplo: <br><span>font-size: clamp(1rem, 4vw, 2rem);</span></p>
+      <ul>
+        <li>Nunca será menor a 1rem</li>
+        <li>Intenta siempre ser el 4vw o 4% del ancho de la ventana</li>
+        <li>Nunca superará los 2rem</li>
+      </ul>
+      <a href="https://www.w3schools.com/cssref/func_clamp.php" target="_blank" rel="noopener noreferrer">clamp() en la W3C</a>
     </section>
   </main>
   <footer>
