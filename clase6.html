@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+	<title>Aplicaciones Web Cliente | ISTEA | Clase 6, Javascript</title>
+  <meta name="description" content="Clase 6 de Aplicaciones Web Cliente en ISTEA.">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="stylesheet" href="css/estilos.css">
+  <script src="js/menu.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">AWC</a></h1>
+    <nav id="primary-navigation" data-visible="false" class="primary-navigation">
+      <ul>
+        <li><a href="clase1.html">Clase 1</a></li>
+        <li><a href="clase2.html">Clase 2</a></li>
+        <li><a href="clase3.html">Clase 3</a></li>
+        <li><a href="clase4.html">Clase 4</a></li>
+        <li><a href="clase5.html">Clase 5</a></li>
+        <li><a href="clase6.html">Clase 6</a></li>
+      </ul>
+    </nav>
+    <button class="menu-boton" aria-label="Ingresar al menu principal" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu principal</span></button>
+  </header>
+  <main class="contenido">
+    <section>
+      <h1>AWC | Clase 6: Introducción a Javascript</h1>
+    </section>
+    <section>
+      <h1>Javascript</h1>
+      <p>JavaScript es el lenguaje de programación que aporta dinamismo e interactividad a las páginas web, permitiendo ejecutar código directamente en el navegador del usuario. Actúa como el <strong>motor que manipula el DOM</strong> generado a partir del <strong>HTML</strong>, modificando nodos, agregando o eliminando elementos, cambiando estilos definidos por CSS, <strong>respondiendo a eventos del usuario</strong> (como clics, movimientos del ratón o entradas en formularios) y realizando operaciones lógicas o cálculos en tiempo real.</p>
+      <p>Gracias a <strong>JavaScript</strong>, una página inicialmente estática se transforma en una aplicación rica y responsiva, capaz de actualizar contenido sin recargar la página completa, comunicarse con servidores mediante peticiones <strong>AJAX</strong> o <strong>Fetch</strong>, y ejecutar lógica compleja, convirtiéndose en el pilar fundamental del desarrollo front-end moderno junto con <strong>HTML</strong> y <strong>CSS</strong>.</p>
+      <a href="https://www.w3schools.com/js/DEFAULT.asp" class="btn-fill" target="_blank" rel="noopener noreferrer">Manual de JS en la W3C</a>
+    </section>
+    <section>
+      <h1>Objetos</h1>
+      <p>Un <strong>objeto</strong> en <strong>Javascript</strong> es la representación de una unidad básica de organización. Un <strong>objeto</strong> es una colección de datos y funcionalidades relacionadas entre sí.</p>
+      <p>Dentro de un objeto encontramos:
+        <ul>
+          <li><strong>Datos:</strong> llamados <strong>propiedades</strong></li>
+          <li><strong>Acciones:</strong> llamadas <strong>métodos</strong></li>
+        </ul>
+      </p>
+      <p>Si nuestro <strong>objeto</strong> fuese una <strong>persona</strong>, sus <strong>propiedades</strong> serían, por ejemplo, <span>persona.edad</span>, <span>persona.altura</span>, <span>persona.cuadroDeFutbol</span>.</p>
+      <p>Siguiendo el ejemplo, si tuviésemos <strong>métodos</strong> asociados a dicha <strong>persona</strong>, los mismos refieren a acciones, por ejemplo <span>persona.caminar()</span>, <span>persona.dormir()</span>, <span>persona.comer()</span>.</p>
+      <h2>Características de los objetos en Javascript</h2>
+      <ul>
+        <li>Un objeto puede tener <strong>cualquier cantidad</strong> de propiedades y métodos.</li>
+        <li>Las propiedades puede contenedor cualquier tipo de dato: strings, números, booleanos, arrays y también, otros objetos.</li>
+        <li>Los métodos son funciones guardadas dentro del objeto.</li>
+        <li>Los objetos son <strong>dinámicos</strong>: podemos agregar, modificar o eliminar propiedades y métodos en cualquier momento.</li>
+      </ul>
+      <h2>¿Todo en <strong>Javascript</strong> es un <strong>objeto</strong>?</h2>
+      <p>Si. Por ejemplo:</p>
+      <ul>
+        <li>Un elemento dentro de mi HTML, por ejemplo, un <span>div</span> es un objeto.</li>
+        <li>Un array <span>[]</span>.</li>
+        <li>Una función.</li>
+        <li><span>document</span>, <span>window</span>, <span>console</span>, son todos objetos.</li>
+      </ul>
+    </section>
+    <section>
+      <h1>Propiedades</h1>
+      <p>En <strong>Javascript</strong> las propiedades son <strong>valores</strong> asociados a un objeto. Por ejemplo, si quieremos obtener el <strong>nombre</strong> de un <strong>usuario</strong> vamos a escribir <span>usuario.nombre</span>, donde <span>usuario</span> es el objeto y <span>nombre</span> su propiedad.</p>
+      <p>Las propiedades sirven para guardar o representar datos.</p>
+      <h2>Las propiedades:</h2>
+      <ul>
+        <li>Se leen y escriben directamente.</li> 
+        <li>Algunas son de sólo lectura, como por ejemplo:
+          <ul>
+            <li><span>element.clientWidth</span></li>
+            <li><span>elemento.offsetHeight</span></li>
+            <li><span>array.length</span></li>
+          </ul>
+        </li>
+        <li>Pueden contener cualquier tipo de dato: string, número, objeto, booleano, arrays.</li>
+      </ul>
+    </section>
+    <section>
+      <h1>Métodos</h1>
+      <p>Los métodos son <strong>funciones</strong> que pertenecen a un objeto. Al ser funciones siempre se ejecutan con paréntesis, por ejemplo <span>getElementById()</span>. Pueden recibir <strong>argumentos</strong> (parámetros). Generalmente producen un <strong>efecto</strong>, cambiar algo en el DOM, agregar un evento, modificar un array, entre otros.</p>
+    </section>
+    <section>
+      <h1>Variables y Constantes en JS</h1>
+      <p>Las variables son contenedores que nos permiten guardar valores. En JS tenemos una palabra reservada <span>let</span> para declarar nuestras <strong>variables</strong>. La palabra reservada <span>const</span> sirve para declarar <strong>constantes</strong>.</p>
+      <p>La diferencia entre las <strong>variables</strong> y <strong>constantes</strong> es que a las variables podemos reasignarles su valor.</p>
+      <p>Para asignar un nombre a las variables podemos utilizar:</p>
+      <ul>
+        <li>Caracteres de la a-z / A-Z</li>
+        <li>Números 0-9</li>
+        <li>_ guión bajo</li>
+      </ul>
+      <p>Uso del "Camel Case". Cuando el nombre de la variable contiene más de una palabra o término, es recomendable escribir la primera letra de cada término en mayúscula. Por ejemplo: <strong>precioArticuloPrincipal.</strong></p>
+      <h2>¿Cuándo usar <span>const</span> y cuándo usar <span>let</span>?</h2>
+      <p>La regla principal que utilizamos es: utilizamos <span>const</span> de manera estándar y <strong>solamente</strong> utilizamos <span>let</span> cuando el valor de la variable va a cambiar a futuro.</p>
+      <ul>
+        <li>En caso de duda: <span>const</span></li>
+        <li>Utilizamos <span>let</span> en caso de que el valor de la variable será reasignado.</li>
+        <li>Casi jamás utilizamos <span>var</span> porque es antiguo y cayó en deshuso.</li>
+        <li>Declaramos las variables lo más cerca posible de dónde las utilizaremos (scope o alcance reducido).</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <div class="contenedor-footer">
+      <span>Aplicaciones Web Cliente | ISTEA | 2026</span>
+    </div>
+  </footer>
+</body>
+</html>
