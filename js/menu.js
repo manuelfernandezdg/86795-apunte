@@ -23,3 +23,19 @@ closeAll.addEventListener('click', () => {
     navToggle.setAttribute('aria-expanded', false);
   }
 })
+
+/* Links para el menú principal */
+const menuItems = [
+  { href: "clase1.html", texto: "Clase 1"},
+  { href: "clase2.html", texto: "Clase 2"},
+  { href: "clase3.html", texto: "Clase 3"},
+  { href: "clase4.html", texto: "Clase 4"},
+  { href: "clase5.html", texto: "Clase 5"},
+  { href: "clase6.html", texto: "Clase 6"},
+  { href: "clase7.html", texto: "Clase 7"}
+]
+
+document.getElementById('nav-links').innerHTML = 
+  menuItems.map(
+    item => `<li><a href="${item.href}">${item.texto}</a></li>`
+  ).join('');
