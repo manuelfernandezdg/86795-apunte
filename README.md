@@ -15,6 +15,11 @@
 - [Google Fonts](https://fonts.google.com/) – Para tipografías personalizadas
 <br><br>
 
+## Iconos
+- [Font Awesome](https://fontawesome.com/) – Font Awesome es una librería de iconos "freemium"
+- [Material Symbols](https://fonts.google.com/icons) – Sistema de iconos oficial de Google, de uso libre
+- [Tech icons](https://www.figma.com/design/lOYhcEAwdUg68MSdI8cQSl/Tech-Icons--Figma-Community---AWC-?node-id=0-1&t=BIZ9Am7KW8xysA1A-1) – Recursos de iconos en Figma
+
 ## Recursos avanzados
 - [CSS-Tricks](https://css-tricks.com/) – Artículos y guías avanzadas de **CSS**
 - [Can I Use...](https://caniuse.com/) – **Soporte** de navegadores para features modernas<br><br>
