@@ -24,11 +24,46 @@
   </header>
   <main class="contenido">
     <section>
-      <h1>AWC | Clase 9</h1>
+      <h1>AWC | Clase 9, JS: métodos y funciones</h1>
     </section>
     <section>
-      <h1></h1>
-      
+      <h1>Métodos</h1>
+      <p>Los métodos son <strong>funciones</strong> que pertenecen a un objeto. Al ser funciones siempre se ejecutan con paréntesis, por ejemplo <span>getElementById()</span>. Pueden recibir <strong>argumentos</strong> (parámetros). Generalmente producen un <strong>efecto</strong>, cambiar algo en el DOM, agregar un evento, modificar un array, entre otros.</p>
+      <h2><span>document.querySelector()</span></h2>
+      <p>Es un método del objeto document que permite seleccionar un elemento del DOM utilizando un selector CSS.</p>
+      <h3>Características</h3>
+      <ul>
+        <li>Devuelve el primer elemento que coincida con el selector.</li>
+        <li>Si no encuentra ningún elemento, devuelve null.</li>
+        <li>Es muy versátil: acepta selectores de clase (.clase), ID (#id), etiquetas (nav), atributos, etc.</li>
+      </ul>
+      <h2><span>addEventListener()</span></h2>
+      <p>Método que permite registrar un evento sobre un elemento del DOM. Cuando ese evento ocurre, se ejecuta una función (callback). Eventos más comunes: <span>click</span>, <span>mouseover</span>, <span>keydown</span>, <span>resize</span>, entre otros.</p>
+      <h2><span>getAttribute()</span></h2>
+      <p>Método que obtiene el valor de un atributo HTML de un elemento.</p>
+      <h3>Características</h3>
+      <ul>
+        <li>Lee el estado actual del elemento a través del nombre del atributo.</li>
+        <li>Siempre devuelve el valor como string (incluso cuando guardamos el valor como <strong>true</strong> o <strong>false</strong>) </li>
+      </ul>
+      <h2><span>setAttribute()</span></h2>
+      <p>Método que establece o modifica el valor de un atributo en un elemento HTML.</p>
+      <h3>Características</h3>
+      <ul>
+        <li>Aunque pasemos valores tipo booleano como <span>true</span> o <span>false</span>, JS lo convierte siempre a string.</li>
+        <li>Se usa tanto para atributos estándar como para atributos personalizados.</li>
+      </ul>
+    </section>
+    <section>
+      <h1>Scroll y Overflow</h1>
+      <p>En maquetación llamamos <span>overflow</span> a cuando el contenido desborda su contenedor. Dicho en otras palabras: el contenido es mayor al área de su contenedor padre.</p>
+      <p>Este comportamiento está controlado desde CSS con la propiedad <span>overflow</span>. Sirve para decidir qué debe hacer el navegador cuando el contenido "escapa" o "desborda" a su contenedor.</p>
+      <ul>
+        <li><span>overflow: visible</span> es el valor por defecto, el contenido simplemente "desborda" a su contenedor.</li>
+        <li><span>overflow: hidden</span> corta el contenido, como una máscara de recorte, para no mostrar el desborde.</li>
+        <li><span>overflow: auto</span> muestra las barras de <strong>scroll</strong> sólo cuando son necesarias</li>
+        <li><span>overflow-x / y</span> sirve para controlar el overflow horizontal y vertical.</li>
+      </ul>
     </section>
   </main>
   <footer>
