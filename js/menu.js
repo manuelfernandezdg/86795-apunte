@@ -34,7 +34,8 @@ const menuItems = [
   { href: "clase6.html", texto: "Clase 6"},
   { href: "clase7.html", texto: "Clase 7"},
   { href: "clase8.html", texto: "Clase 8"},
-  { href: "clase9.html", texto: "Clase 9"}
+  { href: "clase9.html", texto: "Clase 9"},
+  { href: "clase10.html", texto: "Clase 10"}
 ]
 
 document.getElementById('nav-links').innerHTML = 

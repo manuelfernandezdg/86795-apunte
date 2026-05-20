@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+	<title>Aplicaciones Web Cliente | ISTEA | Clase 10</title>
+  <meta name="description" content="Clase 10 de Aplicaciones Web Cliente en ISTEA">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="stylesheet" href="css/estilos.css">
+  <script src="js/menu.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">AWC</a></h1>
+    <nav id="primary-navigation" data-visible="false" class="primary-navigation">
+      <ul id="nav-links"></ul>
+    </nav>
+    <button class="menu-boton" aria-label="Ingresar al menu principal" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu principal</span></button>
+  </header>
+  <main class="contenido">
+    <section>
+      <h1>AWC | Clase 10, JSON</h1>
+    </section>
+    <section>
+      <h1>¿Qué es JSON?</h1>
+      <p>Javascript Object Notation, es un formato de texto que permite representar datos estructurados. Lo utilizamos a lo largo de muchas aplicaciones, por ejemplo, cuando conectamos a través de APIs. Su tamaño ligero y facilidad para ser leído lo hacen muy útil.</p>
+      <p>¿Cuándo lo usamos? Cuando un servidor web envía información (por ejemplo, una lista de productos, datos de usuario), siempre llega como texto JSON. También lo podemos usar para guardar datos en <span>localStorage</span> dentro del navegador. El trabajo de Javascript es convertir el string de JSON a objeto para poder usarlo luego.</p>
+    </section>
+    <section>
+      <h1>Trabajo con JSON</h1>
+      <h2>JSON.parse()</h2>
+      <p>Es un método estático del objeto nativo JSON en JavaScript que analiza (parsea) una cadena de texto con formato JSON válido y la transforma en un <span>valor</span> o <span>estructura de datos de JavaScript</span> (objeto, array, string, number, boolean, null, etc.).</p>
+      <p>Lo utilizamos para poder recibir datos de tipo <span>JSON</span> desde un servidor o también desde APIs, para luego convertirlos a objetos que Javascript pueda procesar.</p>
+      <h2>JSON.stringify()</h2>
+      <p>El método inverso a <span>parse</span> es <span>JSON.stringify()</span> el cual toma un objeto o valor de Javascript y lo serializa (transforma) en una cadena de texto que sigue el standar JSON.</p>
+      <p>Lo utilizamos cuando tenemos que enviar datos al servidor, transformamos con este método el objeto Javascript a una notación que el servidor entiende y puede procesar. También cuando guardamos datos de forma local en el navegador a través del método <span>localStorage()</span>. Sirve también para enviar datos a través de APIs, ya que muhcas esperan recibir dichos datos en formato JSON puro.</p>
+      <h2>map()</h2>
+      <p>El método <span>map()</span> crea un nuevo array con los resultados de llamar a una función (callback) por cada elemento del array original.</p>
+      <ul>
+        <li>No modifica el array original (es inmutable).</li>
+        <li>Siempre devuelve un nuevo array con la misma cantidad de elementos.</li>
+      </ul>
+      <p>Cuando utilizamos el método <span>map()</span> para construir un catálogo en <span>HTML</span> vamos a usar la interpolación <span>${producto.nombre}</span> por ejemplo para llamar a valores que se encuentran dentro del <span>array</span> del producto.</p>
+      <p>Es importante también el uso de <span>back ticks</span> `` o tilde invertido, para poder utilizar saltos de línea en la confección del <span>map()</span>, además que el tilde invertido sirve para manejar mejor las interpolaciones con los valores dinámicos.</p>
+      <p>Por último, debemos también incluir el método <span>join()</span>, sirve para unir y convertir ese <span>array</span> a un string <span>HTML</span> para ser insertado en el <span>DOM</span>.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="contenedor-footer">
+      <span>Aplicaciones Web Cliente | ISTEA | 2026</span>
+    </div>
+  </footer>
+</body>
+</html>
