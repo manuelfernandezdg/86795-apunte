@@ -37,10 +37,31 @@
   </header>
   <main class="contenido">
     <section>
-      <h1>AWC | Clase 11, </h1>
+      <h1>AWC | Clase 11, localStorage y persistencia de datos</h1>
     </section>
     <section>
-      
+      <h1>localStorage()</h1>
+      <p>La propiedad <span>localStorage</span> pertenece al objeto <span>window</span> ue forma parte de la <strong>Web Storage API</strong>. Es un contenedor de tipo <strong>key-value</strong> que permite a las aplicaciones cliente guardar datos de forma persistente en el navegador del usuario.</p>
+      <p>Tenemos que entender que en <span>localStorage</span> solamente podemos guardar <span>strings</span> o cadenas de texto plano. Por ese motivo utilizamos la notación <strong>JSON</strong> para guardar nuestros objetos dentro de <span>localStorage</span></p>
+      <h2>¿Cómo funciona?</h2>
+      <p>Para interactuar con el <span>localStorage</span> lo tenemos que hacer a través de métodos:</p>
+      <ul>
+        <li>Para guardar un valor: <span>localStorage.setItem('clave', 'valor');</span></li>
+        <li>Para obtener un valor: <span>localStorage.getItem('clave');</span></li>
+        <li>Para eliminar un valor: <span>localStorage.removeItem('clave');</span></li>
+        <li>Eliminar todo: <span>localStorage.clear()</span></li>
+      </ul>
+    </section>
+    <section>
+      <h1>Promesas y eventos</h1>
+      <p>Como <strong>Javascript</strong> es un lenguaje <strong>single-threated</strong>, sólo ejecuta una sola cosa por vez. El problema que trae esto es que si tenemos que esperar a la carga de un archivo, o la respuesta de una API, todo el código se bloquea. Para solucionar esta situación, en <strong>Javascript</strong> utilizamos el modelo de <strong>eventos y promesas.</strong></p>
+      <h2>¿Qué es una <span>async function</span>?</h2>
+      <p>Lo que hace la palabra <span>async</span> antes de declarar una función es transformarla en una función asíncrona. Esta función siempre devuelve una <strong>promise</strong>. Cuando utilizamos <span>await</span> dentro de la función <span>async</span> lo que hacemos es "esperar" por la respuesta antes de continuar con el flujo normal de la carga. Por ejemplo si tenemos la situación <span>const res = await fetch('datos.json')</span> lo que estamos haciendo es pedir que resuelva primero la <strong>promise</strong> del <strong>fetch</strong> (la carga de datos) antes de continuar. Es muy común utilizar <span>res</span> como expresión resumida de "response" o "respuesta".</p>
+    </section>
+    <section>
+      <h1>filter()</h1>
+      <p>El método <span>filter()</span> sirve para filtrar un array a través de una condición. Siempre devuelve un nuevo array, sin modificar el original.</p>
+      <p>Su sintaxis utiliza una función callback, <span>nuevoArray = arrayOriginal.filter(callback);</span>. La función callback lo que hace es analizar (filtrar) cada elemento dentro del array original y devuelve siempre <span>true</span> o <span>false</span>.</p>
     </section>
   </main>
   <footer>
