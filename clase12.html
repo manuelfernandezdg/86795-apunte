@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script>
+  try {
+    const saved = localStorage.getItem('theme');
+    const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', saved ?? preferred);
+  } catch {}
+  </script>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aplicaciones Web Cliente | ISTEA | Clase 12</title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Clase 12 de Aplicaciones Web Cliente en ISTEA">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="stylesheet" href="css/estilos.css">
+  <script src="js/menu.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">AWC</a></h1>
+    <div class="contenedor-menu">
+      <nav class="toggle-wrap">
+        <div class="toggle-label" id="mode-label">Modo oscuro</div>
+        <button class="toggle-btn" id="theme-toggle" aria-label="Cambiar tema"><span class="sr-only">Cambiar tema</span></button>
+      </nav>
+      <button class="menu-boton" aria-label="Ingresar al menu principal" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu principal</span></button>
+    </div>
+    <nav id="primary-navigation" data-visible="false" class="primary-navigation">
+      <ul id="nav-links"></ul>
+    </nav>
+  </header>
+  <main class="contenido">
+    <section>
+      <h1>AWC | Clase 12, Delegación de Eventos</h1>
+    </section>
+    <section>
+      <h1>¿Qué es la delegación de eventos en JS?</h1>
+      <p>La Delegación de Eventos es una técnica avanzada en <span>JavaScript</span>. En lugar de agregar un <span>addEventListener</span> a cada elemento individual, se agrega un solo listener al elemento contenedor. Cuando ocurre un <span>evento</span> en un elemento hijo, este se propaga hacia arriba (burbujeo) hasta llegar al contenedor, donde es capturado y procesado.</p>
+      <p>Cuando generamos elementos dinámicamente (como vimos en la práctica en clase), se presenta una situación particular: si agregamos <span>listeners</span> directamente a cada elemento por separado, cada vez que renderizas la lista se crean nuevos listeners. Con el tiempo, se acumulan listeners duplicados. Esto puede general mal rendimiento y posible comportamiento inesperado, además que el código es más complejo y difícil de mantener.</p>
+      <p>Cuando efectuamos la delegación de eventos, solemos utilizar la expresión <span>e.target</span> para detectar el <span>elemento</span> donde ocurre el evento, o también: <span>e.target.closest(selector)</span> para encontrar el pariente más cercano que coincida con el selector.</p>
+      <p>Otras propiedades comunes relacionadas con <span>.target</span> son: <span>.currentTarget</span> la cual señala al elemento que tiene el listener. También <span>e.relatedTarget</span> señala al elemento relacionado cuando hacemos <span>mouseover</span> / <span>mouseout</span>.</p>
+    </section>
+    <section>
+      <h1>Métodos forEach() y appendChild()</h1>
+      <p>El método <span>forEach()</span> sirve para recorrer <span>arrays</span> en JS y ejecutar una función por cada uno de los elementos que componen dicho array. Su expresión es <span>forEach((elemento, indice) => {});</span></p>
+      <p>A diferencia de <span>map()</span>, no devuelve un nuevo <span>array</span>.</p>
+      <p><span>appendChild()</span> nos permite agregar un elemento hijo al final de otro elemento, dentro de un contenedor. Este método agrega el <span>hijo</span> en vivo, si estamos recorriendo un <span>array</span> utilizando el método <span>forEach()</span>, cada elemento es creado individualmente.</p>
+    </section>
+    <section>
+      <h1>Ejercicio</h1>
+      <p>Deben agregar a sus proyectos lo que vimos hasta ahora. Pueden colocar la función de <span>agregar a favoritos</span> dentro de su catálogo. La idea es que los datos sean persistentes, deben utilizar el método <span>localStorage()</span> y las técnicas vistas hasta ahora.</p>
+      <p>También deben mostrar los favoritos seleccionados, no sólo en el catálogo, sino también crear una vista de tipo <span>lista</span> que muestre los items en favoritos como los usuarios los podrían ver en su interfaz.</p>
+      <p>Deben utilizar la misma técnica de maquetación y funciones para crear el <span>carrito de compras</span>, asegurando que los datos también sean persistentes.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="contenedor-footer">
+      <span>Aplicaciones Web Cliente | ISTEA | 2026</span>
+    </div>
+  </footer>
+</body>
+</html>
