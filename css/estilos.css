@@ -22,6 +22,27 @@
 
   /* Iconos */
   --menu: url('../img/menu-lg.svg');
+
+  --cf-bg: #0d1117;
+  --cf-text: #c9d1d9;
+  --cf-line-num: #484f58;
+  --cf-gutter-border: #21262d;
+  --cf-line-hover: rgba(255,255,255,0.03);
+  --cf-tag: #7ee787;
+  --cf-attr: #d2a8ff;
+  --cf-str: #a5d6ff;
+  --cf-key: #ff7b72;
+  --cf-cmt: #9198a1;
+  --cf-num: #79c0ff;
+  --cf-fn: #d2a8ff;
+  --cf-punc: #c9d1d9;
+  --cf-op: #ff7b72;
+  --cf-sel: #79c0ff;
+  --cf-prop: #79c0ff;
+  --cf-atrule: #ff7b72;
+  --cf-entity: #79c0ff;
+  --cf-pseudo: #7ee787;
+  --cf-builtin: #ffa657;
 }
 
 [data-theme="dark"]{
@@ -338,3 +359,69 @@ footer {
   filter: grayscale(0%);
   cursor: pointer;
 }
+
+/* code */
+.code-block span {
+  background: none;
+  margin: 0;
+  padding: 0.1rem 0;
+}
+
+.code-block {
+  background-color: var(--cf-bg);
+  color: var(--cf-text);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow: auto;
+  padding: 1.4rem 1rem 0;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.code-block .code-content {
+  display: block;
+}
+
+.code-block .line {
+  display: flex;
+  align-items: stretch;
+  min-height: 1.6em;
+}
+
+.code-block .line:hover {
+  background-color: var(--cf-line-hover);
+}
+
+.code-block .line-num {
+  user-select: none;
+  text-align: right;
+  color: var(--cf-line-num);
+  min-width: 40px;
+  padding-right: 16px;
+  border-right: 1px solid var(--cf-gutter-border);
+  margin-right: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.code-block .line-content {
+  flex: 1;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.token-comment    { color: var(--cf-cmt); font-style: italic; }
+.token-tag        { color: var(--cf-tag); }
+.token-attr       { color: var(--cf-attr); }
+.token-string     { color: var(--cf-str); }
+.token-keyword    { color: var(--cf-key); }
+.token-number     { color: var(--cf-num); }
+.token-function   { color: var(--cf-fn); }
+.token-punctuation { color: var(--cf-punc); }
+.token-operator   { color: var(--cf-op); }
+.token-selector   { color: var(--cf-sel); }
+.token-property   { color: var(--cf-prop); }
+.token-atrule     { color: var(--cf-atrule); }
+.token-entity     { color: var(--cf-entity); }
+.token-pseudo     { color: var(--cf-pseudo); }
+.token-builtin    { color: var(--cf-builtin); }

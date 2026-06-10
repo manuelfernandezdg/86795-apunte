@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script>
+  try {
+    const saved = localStorage.getItem('theme');
+    const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', saved ?? preferred);
+  } catch {}
+  </script>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aplicaciones Web Cliente | ISTEA | Clase 13</title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Clase 13 de Aplicaciones Web Cliente en ISTEA">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <script src="js/menu.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">AWC</a></h1>
+    <div class="contenedor-menu">
+      <nav class="toggle-wrap">
+        <div class="toggle-label" id="mode-label">Modo oscuro</div>
+        <button class="toggle-btn" id="theme-toggle" aria-label="Cambiar tema"><span class="sr-only">Cambiar tema</span></button>
+      </nav>
+      <button class="menu-boton" aria-label="Ingresar al menu principal" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu principal</span></button>
+    </div>
+    <nav id="primary-navigation" data-visible="false" class="primary-navigation">
+      <ul id="nav-links"></ul>
+    </nav>
+  </header>
+  <main class="contenido">
+    <section>
+      <h1>AWC | Clase 13, operadores y métodos</h1>
+    </section>
+    <section>
+      <h1>Operadores matemáticos en JS</h1>
+      <p>Los operadores matemáticos (o aritméticos) en JS permiten realizar cálculos numéricos. La mayoría operan con el tipo de dato <span>number</span>.</p>
+      <ul>
+        <li><span>+</span> Suma</li>
+        <li><span>-</span> Resta</li>
+        <li><span>*</span> Multiplicación</li>
+        <li><span>/</span> División</li>
+        <li><span>%</span> Módulo (resto)</li>
+        <li><span>**</span> Exponenciación - potencia (base^exponente)</li>
+      </ul>
+      <pre class="code-block"><code class="code-content"><div class="line"><span class="line-num">1</span><span class="line-content">console.<span class="token-function">log</span>(<span class="token-number">10</span> <span class="token-operator">+</span> <span class="token-number">5</span>);     <span class="token-comment">// 15</span></span></div><div class="line"><span class="line-num">2</span><span class="line-content">console.<span class="token-function">log</span>(<span class="token-number">20</span> <span class="token-operator">-</span> <span class="token-number">8</span>);     <span class="token-comment">// 12</span></span></div><div class="line"><span class="line-num">3</span><span class="line-content">console.<span class="token-function">log</span>(<span class="token-number">4</span> <span class="token-operator">*</span> <span class="token-number">6</span>);      <span class="token-comment">// 24</span></span></div><div class="line"><span class="line-num">4</span><span class="line-content">console.<span class="token-function">log</span>(<span class="token-number">15</span> <span class="token-operator">/</span> <span class="token-number">3</span>);     <span class="token-comment">// 5</span></span></div><div class="line"><span class="line-num">5</span><span class="line-content">console.<span class="token-function">log</span>(<span class="token-number">17</span> <span class="token-operator">%</span> <span class="token-number">5</span>);     <span class="token-comment">// 2  (resto)</span></span></div><div class="line"><span class="line-num">6</span><span class="line-content">console.<span class="token-function">log</span>(<span class="token-number">3</span> <span class="token-operator">*</span><span class="token-operator">*</span> <span class="token-number">4</span>);     <span class="token-comment">// 81 (3^4)</span></span></div></code></pre>
+      <h2>Operadores de Incremento y Decremento</h2>
+      <ul>
+        <li><span>++</span> incremento, donde <span>x++</span> suma 1 a x</li>
+        <li><span>--</span> decremento, donde <span>x--</span> resta 1 a x</li>
+      </ul>
+      <h3>Diferencia entre prefijo y sufijo</h3>
+      <pre class="code-block"><code class="code-content"><div class="line"><span class="line-num">1</span><span class="line-content"><span class="token-keyword">let</span> x <span class="token-operator">=</span> <span class="token-number">5</span>;</span></div><div class="line"><span class="line-num">2</span><span class="line-content"> </span></div><div class="line"><span class="line-num">3</span><span class="line-content">console.<span class="token-function">log</span>(x<span class="token-operator">+</span><span class="token-operator">+</span>);   <span class="token-comment">// 5  (primero devuelve, luego incrementa)</span></span></div><div class="line"><span class="line-num">4</span><span class="line-content">console.<span class="token-function">log</span>(x);     <span class="token-comment">// 6</span></span></div><div class="line"><span class="line-num">5</span><span class="line-content"> </span></div><div class="line"><span class="line-num">6</span><span class="line-content">console.<span class="token-function">log</span>(<span class="token-operator">+</span><span class="token-operator">+</span>x);   <span class="token-comment">// 7  (primero incrementa, luego devuelve)</span></span></div></code></pre>
+      <h2>Operadores de Asignación Aritmética (Compound Assignment)</h2>
+      <ul>
+        <li><span>+=</span> ej: <span>x += 5</span> equivale a <span>x = x + 5</span></li>
+        <li><span>-=</span> ej: <span>x -= 5</span> equivale a <span>x = x - 5</span></li>
+        <li><span>*=</span> ej: <span>x *= 5</span> equivale a <span>x = x * 5</span></li>
+        <li><span>/=</span> ej: <span>x /= 5</span> equivale a <span>x = x / 5</span></li>
+        <li><span>%=</span> ej: <span>x %= 5</span> equivale a <span>x = x % 5</span></li>
+        <li><span>**=</span> ej: <span>x **= 5</span> equivale a <span>x = x ** 5</span></li>
+      </ul>
+      <pre class="code-block"><code class="code-content"><div class="line"><span class="line-num">1</span><span class="line-content"><span class="token-keyword">let</span> puntos <span class="token-operator">=</span> <span class="token-number">10</span>;</span></div><div class="line"><span class="line-num">2</span><span class="line-content">puntos <span class="token-operator">+=</span> <span class="token-number">5</span>;     <span class="token-comment">// 15</span></span></div><div class="line"><span class="line-num">3</span><span class="line-content">puntos <span class="token-operator">*=</span> <span class="token-number">2</span>;     <span class="token-comment">// 30</span></span></div><div class="line"><span class="line-num">4</span><span class="line-content">puntos <span class="token-operator">%=</span> <span class="token-number">7</span>;     <span class="token-comment">// 2</span></span></div><div class="line"><span class="line-num">5</span><span class="line-content">console.<span class="token-function">log</span>(puntos);</span></div></code></pre>
+      <h2>Precedencia y Agrupación</h2>
+      <pre class="code-block"><code class="code-content"><div class="line"><span class="line-num">1</span><span class="line-content"><span class="token-comment">// Sin paréntesis</span></span></div><div class="line"><span class="line-num">2</span><span class="line-content">console.<span class="token-function">log</span>(<span class="token-number">2</span> <span class="token-operator">+</span> <span class="token-number">3</span> <span class="token-operator">*</span> <span class="token-number">4</span>);     <span class="token-comment">// 14  (primero multiplicación)</span></span></div><div class="line"><span class="line-num">3</span><span class="line-content"> </span></div><div class="line"><span class="line-num">4</span><span class="line-content"><span class="token-comment">// Con paréntesis</span></span></div><div class="line"><span class="line-num">5</span><span class="line-content">console.<span class="token-function">log</span>((<span class="token-number">2</span> <span class="token-operator">+</span> <span class="token-number">3</span>) <span class="token-operator">*</span> <span class="token-number">4</span>);   <span class="token-comment">// 20</span></span></div></code></pre>
+      <h2>Objeto <span>Math</span></h2>
+      <ul>
+        <li><span>Math.round()</span> Redondea al entero más cercano <span>Math.round(4.7) → 5</span></li>
+        <li><span>Math.floor()</span> Redondea hacia abajo <span>Math.floor(4.9) → 4</span></li>
+        <li><span>Math.ceil()</span> Redondea hacia arriba <span>Math.ceil(4.1) → 5</span></li>
+        <li><span>Math.abs()</span> Valor absoluto <span>Math.abs(-10) → 10</span></li>
+        <li><span>Math.sqrt()</span> Raíz cuadrada <span>Math.sqrt(16) → 4</span></li>
+        <li><span>Math.pow()</span> Potencia (alternativa a **) <span>Math.pow(2, 3) → 8</span></li>
+        <li><span>Math.random()</span> Número aleatorio entre 0 y 1 <span>Math.random()</span></li>
+        <li><span>Math.max()</span> / <span>Math.min()</span> máximo / mínimo de varios números <span>Math.max(1,5,3) → 5</span></li>
+      </ul>
+    </section>
+    <section>
+      <h1>Funciones adicionales</h1>
+      <h2>Number()</h2>
+      <p><span>Number()</span> es una función global (también disponible como constructor) que se utiliza para convertir un valor de cualquier tipo a un número <span>(tipo primitivo number)</span>. El uso más común de la función <span>Number()</span> es para convertir strings a números. Comúnmente estos strings vienen de un <span>JSON</span> o también desde <span>HTML</span> y tienen que ser modificados para poder operar con ellos dentro de un objeto o también, como valor en una operación matemática.</p>
+      <pre class="code-block"><code class="code-content"><div class="line"><span class="line-num">1</span><span class="line-content"><span class="token-comment">// Uso básico</span></span></div><div class="line"><span class="line-num">2</span><span class="line-content">console.<span class="token-function">log</span>(<span class="token-function">Number</span>(<span class="token-string">"42"</span>));           <span class="token-comment">// 42</span></span></div><div class="line"><span class="line-num">3</span><span class="line-content">console.<span class="token-function">log</span>(<span class="token-function">Number</span>(<span class="token-string">"3.14"</span>));         <span class="token-comment">// 3.14</span></span></div><div class="line"><span class="line-num">4</span><span class="line-content">console.<span class="token-function">log</span>(<span class="token-function">Number</span>(<span class="token-keyword">true</span>));           <span class="token-comment">// 1</span></span></div><div class="line"><span class="line-num">5</span><span class="line-content">console.<span class="token-function">log</span>(<span class="token-function">Number</span>(<span class="token-keyword">false</span>));          <span class="token-comment">// 0</span></span></div><div class="line"><span class="line-num">6</span><span class="line-content">console.<span class="token-function">log</span>(<span class="token-function">Number</span>(<span class="token-keyword">null</span>));           <span class="token-comment">// 0</span></span></div><div class="line"><span class="line-num">7</span><span class="line-content">console.<span class="token-function">log</span>(<span class="token-function">Number</span>(<span class="token-keyword">undefined</span>));      <span class="token-comment">// NaN</span></span></div><div class="line"><span class="line-num">8</span><span class="line-content"> </span></div><div class="line"><span class="line-num">9</span><span class="line-content"><span class="token-comment">// Detección de NaN</span></span></div><div class="line"><span class="line-num">10</span><span class="line-content"><span class="token-keyword">const</span> resultado <span class="token-operator">=</span> <span class="token-function">Number</span>(<span class="token-string">"hola"</span>);</span></div><div class="line"><span class="line-num">11</span><span class="line-content">console.<span class="token-function">log</span>(<span class="token-function">isNaN</span>(resultado));       <span class="token-comment">// true</span></span></div><div class="line"><span class="line-num">12</span><span class="line-content">console.<span class="token-function">log</span>(Number.<span class="token-function">isNaN</span>(resultado)); <span class="token-comment">// true (método recomendado)</span></span></div></code></pre>
+      <h2>Métodos y propiedades útiles del objeto Number</h2>
+      <ul>
+        <li><span>Number.isInteger(valor)</span> pregunta: ¿es un entero?</li>
+        <li><span>Number.isFinite(valor)</span> pregunta: ¿es un número finito?</li>
+        <li><span>Number.isNaN(valor)</span> versión segura de isNaN()</li>
+        <li><span>Number.parseInt()</span> y <span>Number.parseFloat()</span> también disponibles como funciones globales <span>(parseInt, parseFloat)</span></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <div class="contenedor-footer">
+      <span>Aplicaciones Web Cliente | ISTEA | 2026</span>
+    </div>
+  </footer>
+</body>
+</html>
