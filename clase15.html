@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script>
+  try {
+    const saved = localStorage.getItem('theme');
+    const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', saved ?? preferred);
+  } catch {}
+  </script>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aplicaciones Web Cliente | ISTEA | Clase 15</title>
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Clase 15 de Aplicaciones Web Cliente en ISTEA">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <script src="js/menu.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">AWC</a></h1>
+    <div class="contenedor-menu">
+      <nav class="toggle-wrap">
+        <div class="toggle-label" id="mode-label">Modo oscuro</div>
+        <button class="toggle-btn" id="theme-toggle" aria-label="Cambiar tema"><span class="sr-only">Cambiar tema</span></button>
+      </nav>
+      <button class="menu-boton" aria-label="Ingresar al menu principal" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu principal</span></button>
+    </div>
+    <nav id="primary-navigation" data-visible="false" class="primary-navigation">
+      <ul id="nav-links"></ul>
+    </nav>
+  </header>
+  <main class="contenido">
+    <section>
+      <h1>AWC | Clase 15, API</h1>
+    </section>
+    <section>
+      <h1>Application Programming Interface</h1>
+      <p>Una <span>API</span> es una interfaz que permite que dos programas se comuniquen entre sí. Las funciones del programa principal son servidas a forma de <strong>opciones</strong> para ser consumidas por otro programa. Sirve principalmente para que varios programas puedan utilizar los recursos del programa principal sin la necesidad de saber cómo funciona por dentro</p>
+      <h2>Tipos de <strong>API</strong></h2>
+      <p>Aunque <strong>HTML</strong> y <strong>CSS</strong> por si sólos no tienen "APIs" en el sentido tradicional, cuando los combinamos con <strong>Javascript</strong> el navegaedor expone varias <strong>APIs</strong>:</p>
+      <h3>DOM API (Document Object Model)</h3>
+      <p>Esta <strong>API</strong> le permite a <strong>JS</strong> leer y modificar el <strong>HTML</strong>.</p>
+      <pre class="code-block"><code class="code-content"><div class="line"><span class="line-num">1</span><span class="line-content">document.<span class="token-function">getElementById</span>(<span class="token-string">"boton"</span>)</span></div><div class="line"><span class="line-num">2</span><span class="line-content">document.<span class="token-function">querySelector</span>(<span class="token-string">".clase"</span>)</span></div><div class="line"><span class="line-num">3</span><span class="line-content">element.innerHTML <span class="token-operator">=</span> <span class="token-string">"Hola"</span></span></div><div class="line"><span class="line-num">4</span><span class="line-content">element.<span class="token-function">addEventListener</span>(<span class="token-string">"click"</span>, ...)</span></div></code></pre>
+
+      <h3>Web APIs en el frontend</h3>
+      <ul>
+        <li>localStorage / sessionStorage, las cuales sirven para guardar datos en el navegador.</li>
+        <li>Canvas API, sirve para dibujar gráficos, desplegar juegos y animaciones.</li>
+        <li>Web Audio API, sirve para reproducir sonido.</li>
+        <li>Geolocation API, obtener ubicación del usuario.</li>
+        <li>Clipboard API, guarda en el portapapeles para poder copiar y pegar información.</li>
+        <li>Intersection Observer API, detecta cuando un elemento aparece en pantalla.</li>
+        <li>Resize Observer, Mutation, Observer, entre otras.</li>
+      </ul>
+
+      <h3>Fetch API</h3>
+      <p>A través de esta API, realizamos peticiones a través del protocolo <strong>HTTPS</strong>. También conocida como <strong>API REST</strong>, es el tipo de <strong>API</strong> que asociamos cuando hablamos de ellas.</p>
+      <pre class="code-block"><code class="code-content"><div class="line"><span class="line-num">1</span><span class="line-content"><span class="token-function">fetch</span>(<span class="token-string">"https://api.ejemplo.com/usuarios"</span>)</span></div><div class="line"><span class="line-num">2</span><span class="line-content">  .<span class="token-function">then</span>(res <span class="token-operator">=&gt;</span> res.<span class="token-function">json</span>())</span></div></code></pre>
+
+      <h3>CSS + Javascript / CSSOM - CSS Object Model</h3>
+      <p>El CSSOM es como el DOM con HTML y JS, en este caso utilizamos la API del CSSOM para hacer las llamadas desde JS y editar las clases de los elementos.</p>
+      <pre class="code-block"><code class="code-content"><div class="line"><span class="line-num">1</span><span class="line-content">element.style.backgroundColor <span class="token-operator">=</span> <span class="token-string">"red"</span></span></div><div class="line"><span class="line-num">2</span><span class="line-content">element.classList.<span class="token-function">add</span>(<span class="token-string">"activo"</span>)</span></div><div class="line"><span class="line-num">3</span><span class="line-content">window.<span class="token-function">getComputedStyle</span>(element)</span></div></code></pre>
+
+      <p>En resumen: <strong>API REST</strong> es un <strong>tipo</strong> de API que sirve para comunicar la aplicación del lado del cliente con el servidor</p>
+      <p><strong>Browser APIs</strong> son todas las herramientas que en navegador tiene y nosotros desde <strong>Javascript</strong> controlamos y manipulamos.</p>
+      <p>Cuando comunmente hablamos de una <strong>API</strong> en React, nos referimos a utilizar componentes, hooks, contexto. Por ejemplo <span>useState</span>, <span>useEffect</span></p>
+
+      <h3>API GraphQL</h3>
+      <p><strong>GraphQL</strong> es un tipo de conexión a través de <strong>API</strong> que resuelve un problema escencial: muchas veces cuando conectamos a traves de API REST, la conexión nos envía demasiada información sin poder filtrarla. Por ejemplo, si necesitamos trabajar con los <span>usuarios()</span> de nuestra app, la petición nos envía todo el contenido sin filtrado.</p>
+      <p>A través de <strong>GraphQL</strong> podemos filtrar el pedido, mejorando el rendimiento de la conexión.</p>
+      <pre class="code-block"><code class="code-content"><div class="line"><span class="line-num">1</span><span class="line-content">query {</span></div><div class="line"><span class="line-num">2</span><span class="line-content">  <span class="token-function">user</span>(id<span class="token-operator">:</span> <span class="token-string">"123"</span>) {</span></div><div class="line"><span class="line-num">3</span><span class="line-content">    nombre</span></div><div class="line"><span class="line-num">4</span><span class="line-content">    email</span></div><div class="line"><span class="line-num">5</span><span class="line-content">    posts {</span></div><div class="line"><span class="line-num">6</span><span class="line-content">      titulo</span></div><div class="line"><span class="line-num">7</span><span class="line-content">      comentarios { texto }</span></div><div class="line"><span class="line-num">8</span><span class="line-content">    }</span></div><div class="line"><span class="line-num">9</span><span class="line-content">  }</span></div><div class="line"><span class="line-num">10</span><span class="line-content">}</span></div></code></pre>
+
+      <h3>Next.js / App Router</h3>
+      <p>Cuando trabajamos con <strong>Next.js</strong> los datos pueden ser preparados directamente usando <strong>server components</strong> (componentes del lado del servidor) para realizar las consultas a base de datos directamente dentro de ellos. En este caso, el <strong>HTML</strong> llega ya renderizado al lado del cliente.</p>
+    </section>
+    <section>
+      <h1>API REST con Airtable</h1>
+      <p><strong>Airtable</strong> es una plataforma propietaria de <strong>Google</strong> la cual sirve para trabajar con base de datos relacionales, sin la necesidad de crear un back-end. Tiene una interfaz visual, muy similar a una hoja de cálculo común y corriente.</p>
+      <p>En el contexto de la materia, esta herramienta nos permitirá crear un back-end de prueba para poder consumirlo a través de una llamada de tipo <strong>API REST</strong> directamente en nuestra aplicación, sin la necesidad de cambiar nuestro código local.</p>
+      <p><strong>Airtable</strong> utiliza una <strong>Web API REST</strong> clásica. Los datos viaja a través de <strong>JSON</strong> y accede mediante HTTP requests (GET, POST, PATCH, DELETE).</p>
+      <p>Su método de verificación es a través de <strong>Personal Access Tokens (PAT)</strong>.</p>
+      <pre class="code-block"><code class="code-content"><div class="line"><span class="line-num">1</span><span class="line-content"><span class="token-comment">// Carga desde Airtable API REST</span></span></div><div class="line"><span class="line-num">2</span><span class="line-content"><span class="token-keyword">const</span> AIRTABLE_BASE_ID <span class="token-operator">=</span> <span class="token-string">'xxxxxxxxx'</span>;</span></div><div class="line"><span class="line-num">3</span><span class="line-content"><span class="token-keyword">const</span> AIRTABLE_PAT <span class="token-operator">=</span> <span class="token-string">'patxxxxxxxxxx'</span>;</span></div><div class="line"><span class="line-num">4</span><span class="line-content"> </span></div><div class="line"><span class="line-num">5</span><span class="line-content"><span class="token-keyword">async</span> <span class="token-keyword">function</span> <span class="token-function">cargarProductos</span>() {</span></div><div class="line"><span class="line-num">6</span><span class="line-content">  <span class="token-keyword">const</span> res <span class="token-operator">=</span> <span class="token-keyword">await</span> <span class="token-function">fetch</span>(<span class="token-string">`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Productos`</span>, {</span></div><div class="line"><span class="line-num">7</span><span class="line-content">    headers<span class="token-operator">:</span> { Authorization<span class="token-operator">:</span> <span class="token-string">`Bearer ${AIRTABLE_PAT}`</span> }</span></div><div class="line"><span class="line-num">8</span><span class="line-content">  });</span></div><div class="line"><span class="line-num">9</span><span class="line-content">  <span class="token-keyword">const</span> data <span class="token-operator">=</span> <span class="token-keyword">await</span> res.<span class="token-function">json</span>();</span></div><div class="line"><span class="line-num">10</span><span class="line-content">  productos <span class="token-operator">=</span> data.records.<span class="token-function">map</span>(r <span class="token-operator">=&gt;</span> r.fields);</span></div><div class="line"><span class="line-num">11</span><span class="line-content">}</span></div></code></pre>
+
+      <h2>Creación de la tabla</h2>
+      <p>Primero deben crear su cuenta en <a href="https://airtable.com/" target="_blank" rel="noopener noreferrer">Airtable</a>. Dentro de la página, pueden empezar creando su proyecto. En la página de <strong>inicio</strong> pueden elegir la opción <strong>+ Crear</strong></p>
+      <img src="img/airtable/01.png" alt="Paso 1">
+      <br>
+      <img src="img/airtable/02.png" alt="Paso 2">
+      <br>
+      <p>En la vista de tabla, podemos ponerle nombre nombre al proyecto.</p>
+      <img src="img/airtable/03.png" alt="Paso 3">
+      <br>
+      <p>La tabla puede autocompletarse si importamos datos, por ejemplo, desde un archivo <span>.csv</span>.</p>
+      <img src="img/airtable/04.png" alt="Paso 4">
+      <br>
+      <p>Debemos crear un token de acceso para poder conectarnos a través de <span>API REST</span> con la app de Airtable.</p>
+      <img src="img/airtable/08.png" alt="Paso 8">
+      <br>
+      <img src="img/airtable/10.png" alt="Paso 10">
+      <br>
+      <img src="img/airtable/11.png" alt="Paso 11">
+      <br>
+      <p>Tenemos que setear los permisos de lectura con los valores <span>data.records:read</span> y <span>schema.bases:read</span>.</p>
+      <img src="img/airtable/12.png" alt="Paso 12">
+    </section>
+  </main>
+  <footer>
+    <div class="contenedor-footer">
+      <span>Aplicaciones Web Cliente | ISTEA | 2026</span>
+    </div>
+  </footer>
+</body>
+</html>

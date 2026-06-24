@@ -1,4 +1,3 @@
-/* Estilos generales para todos los elementos */
 *,
 ::after,
 ::before {
@@ -23,6 +22,7 @@
   /* Iconos */
   --menu: url('../img/menu-lg.svg');
 
+  /* Code */
   --cf-bg: #0d1117;
   --cf-text: #c9d1d9;
   --cf-line-num: #484f58;
@@ -74,6 +74,10 @@ body {
   line-height: 1.6;
   background: var(--bg-color-200);
   color: var(--text-color);
+}
+
+table {
+  
 }
 
 header {
@@ -410,18 +414,62 @@ footer {
   word-break: break-all;
 }
 
-.token-comment    { color: var(--cf-cmt); font-style: italic; }
-.token-tag        { color: var(--cf-tag); }
-.token-attr       { color: var(--cf-attr); }
-.token-string     { color: var(--cf-str); }
-.token-keyword    { color: var(--cf-key); }
-.token-number     { color: var(--cf-num); }
-.token-function   { color: var(--cf-fn); }
-.token-punctuation { color: var(--cf-punc); }
-.token-operator   { color: var(--cf-op); }
-.token-selector   { color: var(--cf-sel); }
-.token-property   { color: var(--cf-prop); }
-.token-atrule     { color: var(--cf-atrule); }
-.token-entity     { color: var(--cf-entity); }
-.token-pseudo     { color: var(--cf-pseudo); }
-.token-builtin    { color: var(--cf-builtin); }
+.token-comment { 
+  color: var(--cf-cmt);
+  font-style: italic;
+}
+
+.token-tag {
+  color: var(--cf-tag);
+}
+
+.token-attr { color: var(--cf-attr);
+}
+
+.token-string {
+  color: var(--cf-str);
+}
+
+.token-keyword {
+  color: var(--cf-key);
+}
+
+.token-number {
+  color: var(--cf-num);
+}
+
+.token-function {
+  color: var(--cf-fn);
+}
+
+.token-punctuation {
+  color: var(--cf-punc);
+}
+
+.token-operator {
+  color: var(--cf-op);
+}
+
+.token-selector {
+  color: var(--cf-sel);
+}
+
+.token-property {
+  color: var(--cf-prop);
+}
+
+.token-atrule {
+  color: var(--cf-atrule);
+}
+
+.token-entity {
+  color: var(--cf-entity);
+}
+
+.token-pseudo {
+  color: var(--cf-pseudo);
+}
+
+.token-builtin {
+  color: var(--cf-builtin);
+}
